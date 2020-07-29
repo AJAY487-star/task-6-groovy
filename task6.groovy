@@ -20,7 +20,7 @@ upstream('Job1', 'SUCCESS')
 }
 steps{
 remoteShell('root@192.168.99:108:22') {
-command(''if sudo ls /root/task6 | grep .html
+command('''if sudo ls /root/task6 | grep .html
 then
 if sudo kubectl get deployment | grep web
 then
@@ -39,7 +39,7 @@ fi
 else
 echo "not a html code"
 fi
-'')
+''')
 }
 }
 }
@@ -52,7 +52,7 @@ upstream('Job2','SUCCESS')
 }
 steps{
 remoteShell('root@192.168.99.108:22') {
-command(''if sudo kubectl get pods | grep webaj
+command('''if sudo kubectl get pods | grep webaj
 then
 webaj_status_code=$(curl -o /dev/null -s -w "%{http_code}" 192.168.99.102:30000)
 if [[ $webaj_status_code == 200 ]]
@@ -65,7 +65,7 @@ fi
 else
 echo " not running "
 fi
-fi'')
+fi''')
 }
 }
 
