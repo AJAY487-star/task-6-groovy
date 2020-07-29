@@ -64,7 +64,6 @@ exit 1
 fi
 else
 echo " not running "
-fi
 fi''')
 }
 }
