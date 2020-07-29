@@ -30,7 +30,7 @@ sudo kubectl create -f /root/web.yml
 sleep 30
 if kubectl get pods | grep webaj
 then
-ajay=$(sudo kubectl get pods -o=name | grep webaj | sed "s/^.\{4\}//")
+ajay=$(sudo kubectl get pods -o=name | grep webaj | sed "s/^.\\{4\}//")
 sudo kubectl cp /root/task6/index.html $ajay:/usr/local/apache2/htdocs/
 else
 echo "code not copy"
